@@ -20,7 +20,7 @@ dotenv.load_dotenv()
 
 # Chemin vers les fichiers de configuration
 CONFIG_DIR = Path("config")
-TASK_SAVE_DIR = Path("task_save")
+TASK_SAVE_DIR = Path("output/task_save")
 
 def load_yaml(file_path):
     """Charge un fichier YAML et retourne son contenu."""
@@ -158,7 +158,7 @@ def main():
     print(result.raw) # Afficher le résultat de l'exécution
 
     # Enregistrer dans un fichier
-    with open('crew_output.txt', 'w', encoding='utf-8') as f:
+    with open('output/crew_output.txt', 'w', encoding='utf-8') as f:
         f.write(str(result.raw))
 
     print("Résultat enregistré dans crew_output.txt")
