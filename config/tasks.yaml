@@ -1,0 +1,614 @@
+# Configuration des tâches pour le projet Token Forge
+
+# Ajout à la tâche du Chef de Projet pour instruire sur la production incrémentale
+project_planning_task:
+  name: "project_planning_task"
+  agent: "project_manager"
+  description: >
+    Élaborer un plan de projet complet pour le développement de la plateforme Token Forge
+    et communiquer les conventions de documentation à toute l'équipe.
+    
+    Vos objectifs:
+    1. Analyser en détail les exigences et contraintes du projet
+    2. Définir les phases du projet et établir un calendrier réaliste
+    3. Identifier les dépendances entre les différentes tâches
+    4. Attribuer les responsabilités et coordonner le travail entre les agents
+    5. Établir des critères de qualité et des jalons clairs
+    6. Identifier les risques potentiels et élaborer des stratégies d'atténuation
+    7. IMPORTANT: Communiquer à tous les membres de l'équipe les conventions de documentation suivantes
+    
+    INSTRUCTIONS CRITIQUES À COMMUNIQUER À TOUS LES AGENTS:
+    
+    1. PRODUCTION INCRÉMENTALE DES RÉSULTATS:
+       - Chaque agent doit fournir les fichiers complets qu'il produit IMMÉDIATEMENT après les avoir créés
+       - Ne pas attendre la fin d'une discussion ou d'une phase pour présenter le code ou la documentation
+       - Présenter chaque fichier dans sa totalité, sans fragmenter le contenu
+       - Indiquer clairement quand un fichier est terminé et prêt à être intégré
+    
+    2. CONVENTIONS DE DOCUMENTATION ET DE CODE:
+       Pour que la Secrétaire Technique puisse extraire efficacement les fichiers et la documentation, tous les agents doivent suivre ces conventions:
+    
+       A) Pour le code source Solidity:
+          ```
+          // NomDuFichier.sol
+          ```solidity
+          // SPDX-License-Identifier: MIT
+          pragma solidity ^0.8.28;
+          
+          contract NomDuContrat {
+              // Contenu du contrat
+          }
+          ```
+    
+       B) Pour les tests et scripts TypeScript/JavaScript:
+          ```
+          // nomDuFichier.ts
+          ```typescript
+          import { expect } from "chai";
+          
+          describe("Test", function() {
+              // Contenu du test
+          });
+          ```
+    
+       C) Pour la documentation:
+          ```
+          # Documentation: NomDuFichier.md
+          
+          ## Titre principal
+          
+          Contenu de la documentation...
+          ```
+    
+    3. SUIVI ET VALIDATION:
+       - Après avoir produit un fichier, demander à la Secrétaire Technique de confirmer sa réception
+       - Noter explicitement les modifications apportées à un fichier existant
+       - Préciser quand un fichier est dans sa version finale
+    
+    Livrables:
+    - Plan de projet détaillé avec phases et jalons
+    - Matrice de responsabilités pour chaque agent
+    - Analyse des risques et plan d'atténuation
+    - Document de suivi pour monitorer l'avancement du projet
+    - Confirmation que les conventions de documentation et la production incrémentale ont été communiquées à toute l'équipe
+    
+    Contraintes:
+    - Le plan doit respecter les contraintes techniques spécifiées
+    - Il doit prévoir des points de synchronisation réguliers entre les agents
+    - Il doit inclure des mécanismes de gestion de la qualité
+    - Il doit anticiper les défis spécifiques au développement blockchain
+  expected_output: "Plan de projet complet avec calendrier, responsabilités, stratégies d'atténuation des risques, et confirmation de la communication des conventions de documentation"
+  output_file: "output/project_plan.md"
+
+team_coordination_task:
+  name: "team_coordination_task"
+  agent: "project_manager"
+  description: >
+    Coordonner et superviser le travail de l'équipe tout au long du développement de la plateforme Token Forge.
+    
+    Vos objectifs:
+    1. Organiser des réunions de synchronisation régulières entre les agents
+    2. Suivre l'avancement de chaque tâche et résoudre les blocages
+    3. Faciliter la communication et la collaboration entre les agents
+    4. Assurer l'alignement de tous les agents sur les objectifs du projet
+    5. Adapter le plan en fonction des évolutions et imprévus
+    6. Valider que les livrables respectent les critères de qualité définis
+    
+    Livrables:
+    - Rapports d'avancement réguliers
+    - Compte-rendus des points de décision importants
+    - Document de suivi des problèmes et solutions apportées
+    - Évaluation finale du projet
+    
+    Contraintes:
+    - Maintenir un équilibre entre l'avancement du projet et la qualité des livrables
+    - Communiquer clairement les attentes et échéances à chaque agent
+    - Anticiper et résoudre les problèmes avant qu'ils n'impactent le projet
+    - Respecter le champ d'expertise de chaque agent tout en assurant la cohérence globale
+  expected_output: "Rapports de suivi et documentation de la coordination d'équipe"
+  output_file: "output/team_coordination.md"
+
+architecture_task:
+  name: "architecture_task"
+  agent: "pattern_expert"
+  description: >
+    Analyser en détail les exigences du projet Token Forge et concevoir une architecture globale pour le système.
+    
+    Vos objectifs:
+    1. Comprendre toutes les fonctionnalités requises pour la plateforme
+    2. Définir l'architecture globale du système, y compris tous les contrats intelligents nécessaires
+    3. Identifier les interdépendances entre les différents composants
+    4. Créer un diagramme ou une documentation claire expliquant l'architecture
+    5. Identifier les risques potentiels et proposer des stratégies d'atténuation
+    
+    Livrables:
+    - Document d'architecture détaillé avec description des composants
+    - Diagramme d'architecture (textuel ou en ASCII art)
+    - Analyse des risques et stratégies d'atténuation
+    - Recommandations de bibliothèques et frameworks à utiliser
+    
+    Contraintes:
+    - L'architecture doit être modulaire et permettre des mises à jour futures
+    - Elle doit respecter les meilleures pratiques de développement Ethereum
+    - Elle doit tenir compte des contraintes techniques spécifiées (TypeScript, Solidity 0.8.28, Hardhat 2.22.19, Ethers v6)
+  expected_output: "Document d'architecture détaillé avec diagrammes, analyses et recommandations"
+  output_file: "output/architecture_design.md"
+
+erc20_task:
+  name: "erc20_task"
+  agent: "solidity_expert"
+  description: >
+    Développer un contrat ERC-20 Token complet et flexible qui servira de base pour tous les tokens créés par la plateforme.
+    
+    Vos objectifs:
+    1. Implémenter un contrat intelligent `ERC20Token.sol` qui respecte pleinement le standard ERC-20
+    2. Ajouter des fonctionnalités supplémentaires comme le burning, le minting, et la pausabilité
+    3. Documenter le code avec des commentaires NatSpec complets
+    4. S'assurer que le contrat est compatible avec le pattern Factory qui sera utilisé
+    5. Optimiser le contrat pour minimiser les coûts de gas
+    
+    Livrables:
+    - Code source Solidity pour le contrat `ERC20Token.sol`
+    - Documentation complète avec NatSpec
+    - Explication des choix d'implémentation et des fonctionnalités
+    
+    Contraintes:
+    - Utiliser Solidity 0.8.28
+    - Considérer l'utilisation des bibliothèques OpenZeppelin si approprié
+    - Le contrat doit être flexible pour permettre différentes configurations (avec/sans minting, burning, etc.)
+    - Le code doit être sécurisé contre les vulnérabilités courantes
+  expected_output: "Code source Solidity pour ERC20Token.sol avec documentation et explications"
+  output_file: "output/ERC20Token.sol"
+
+factory_task:
+  name: "factory_task"
+  agent: "pattern_expert"
+  description: >
+    Développer un contrat Factory avec pattern Proxy pour permettre la création et la gestion de tokens ERC-20.
+    
+    Vos objectifs:
+    1. Implémenter un contrat `TokenFactory.sol` qui peut déployer de nouveaux tokens ERC-20
+    2. Intégrer un système de proxy pour permettre les mises à jour du contrat Factory
+    3. Implémenter des fonctions pour personnaliser les tokens (nom, symbole, supply, etc.)
+    4. Ajouter un système de suivi des tokens déployés
+    5. Documenter le code avec des commentaires NatSpec complets
+    
+    Livrables:
+    - Code source Solidity pour les contrats `TokenFactory.sol` et les contrats de proxy associés
+    - Documentation complète avec NatSpec
+    - Explication du pattern Proxy utilisé et de son fonctionnement
+    
+    Contraintes:
+    - Utiliser Solidity 0.8.28
+    - Implémenter un système de proxy qui permet des mises à jour sans perte de données
+    - Le contrat doit être optimisé pour minimiser les coûts de gas
+    - Assurer la sécurité et l'intégrité des données lors des mises à jour
+  expected_output: "Code source Solidity pour TokenFactory.sol et contrats de proxy avec documentation"
+  output_file: "output/TokenFactory.sol"
+
+access_control_task:
+  name: "access_control_task"
+  agent: "security_expert"
+  description: >
+    Développer un système de gestion des accès et des rôles pour la plateforme Token Forge.
+    
+    Vos objectifs:
+    1. Créer un contrat `AccessControl.sol` pour gérer les rôles et permissions
+    2. Définir les différents rôles nécessaires pour le système (admin, créateur de token, etc.)
+    3. Implémenter les mécanismes d'attribution et de révocation des rôles
+    4. Intégrer ce système avec la Factory et les tokens
+    5. Documenter le code avec des commentaires NatSpec complets
+    
+    Livrables:
+    - Code source Solidity pour le contrat `AccessControl.sol`
+    - Documentation complète avec NatSpec
+    - Explication des rôles définis et de leur hiérarchie
+    
+    Contraintes:
+    - Utiliser Solidity 0.8.28
+    - Respecter les principes de moindre privilège
+    - Assurer que le système est sécurisé contre les élévations de privilèges non autorisées
+    - Considérer l'utilisation des standards OpenZeppelin pour la gestion des accès si approprié
+  expected_output: "Code source Solidity pour AccessControl.sol avec documentation et explications des rôles"
+  output_file: "output/AccessControl.sol"
+
+liquidity_pool_task:
+  name: "liquidity_pool_task"
+  agent: "dex_expert"
+  description: >
+    Développer l'intégration avec les DEX pour la création automatique de pools de liquidité.
+    
+    Vos objectifs:
+    1. Implémenter un contrat ou module pour interagir avec un DEX (Uniswap, Sushiswap, etc.)
+    2. Créer des fonctions pour établir automatiquement des pools de liquidité lors du lancement d'un token
+    3. Permettre la configuration des paramètres de pool de liquidité
+    4. Documenter le code avec des commentaires NatSpec complets
+    
+    Livrables:
+    - Code source Solidity pour les contrats d'intégration DEX
+    - Documentation complète avec NatSpec
+    - Explication du fonctionnement de l'intégration et des configurations possibles
+    
+    Contraintes:
+    - Utiliser Solidity 0.8.28
+    - Assurer la compatibilité avec le protocole DEX choisi
+    - Optimiser les coûts de gas pour les opérations de création de pool
+    - Gérer correctement les erreurs et cas limites
+  expected_output: "Code source Solidity pour l'intégration DEX avec documentation"
+  output_file: "output/LiquidityPool.sol"
+
+frontend_task:
+  name: "frontend_task"
+  agent: "frontend_expert"
+  description: >
+    Développer une interface utilisateur complète pour la plateforme Token Forge.
+    
+    Vos objectifs:
+    1. Créer une page d'accueil listant les tokens lancés et affichant des statistiques
+    2. Développer une page de déploiement de token avec un formulaire complet
+    3. Implémenter une page de détails pour chaque token
+    4. Assurer l'intégration avec les smart contracts via Ethers.js v6
+    5. Implémenter la connexion wallet et la gestion des transactions
+    
+    Livrables:
+    - Code source TypeScript/React pour l'interface utilisateur
+    - Documentation des composants et de leur utilisation
+    - Guide d'interaction avec les smart contracts
+    
+    Contraintes:
+    - Utiliser TypeScript pour tout le développement frontend
+    - Utiliser Ethers.js v6 pour l'interaction avec la blockchain
+    - Créer une interface intuitive même pour les utilisateurs peu familiers avec la blockchain
+    - Assurer la compatibilité avec les principaux wallets (MetaMask, WalletConnect, etc.)
+  expected_output: "Code source TypeScript/React pour l'interface utilisateur avec documentation"
+  output_file: "output/frontend_code.tsx"
+
+testing_task:
+  name: "testing_task"
+  agent: "testing_expert"
+  description: >
+    Développer une suite complète de tests pour tous les smart contracts de la plateforme.
+    
+    Vos objectifs:
+    1. Écrire des tests unitaires complets pour tous les contrats (ERC20Token, TokenFactory, AccessControl, etc.)
+    2. Développer des tests d'intégration pour vérifier les interactions entre contrats
+    3. Créer des scénarios de test pour les cas d'utilisation principaux
+    4. Mettre en place des tests de sécurité spécifiques
+    
+    Livrables:
+    - Code source TypeScript pour les tests unitaires et d'intégration
+    - Documentation des tests et de leur couverture
+    - Rapport sur les résultats des tests et recommandations
+    
+    Contraintes:
+    - Utiliser Hardhat 2.22.19 pour l'environnement de test
+    - Utiliser TypeScript pour l'écriture des tests
+    - Assurer une couverture de test élevée (>90%)
+    - Tester spécifiquement les cas limites et scénarios d'erreur
+  expected_output: "Code source TypeScript pour les tests avec documentation et rapport"
+  output_file: "output/tests.ts"
+
+deployment_task:
+  name: "deployment_task"
+  agent: "testing_expert"
+  description: >
+    Préparer et exécuter le déploiement des smart contracts sur le réseau testnet Holesky.
+    
+    Vos objectifs:
+    1. Créer les scripts de déploiement pour tous les contrats
+    2. Configurer l'environnement pour le déploiement sur Holesky
+    3. Exécuter le déploiement et vérifier le bon fonctionnement
+    4. Documenter les adresses de contrat et les étapes de déploiement
+    
+    Livrables:
+    - Scripts de déploiement TypeScript
+    - Documentation du processus de déploiement
+    - Adresses des contrats déployés sur Holesky
+    - Rapport de vérification post-déploiement
+    
+    Contraintes:
+    - Utiliser Hardhat 2.22.19 pour le déploiement
+    - Assurer la vérification des contrats sur Etherscan
+    - Documenter clairement chaque étape pour permettre une reproduction
+    - Tester les contrats déployés pour confirmer leur bon fonctionnement
+  expected_output: "Scripts de déploiement, documentation et rapport de vérification"
+  output_file: "output/deployment.ts"
+
+documentation_task:
+  name: "documentation_task"
+  agent: "documentation_expert"
+  description: >
+    Créer une documentation complète pour l'ensemble du projet Token Forge.
+    
+    Vos objectifs:
+    1. Compiler toute la documentation technique des différents composants
+    2. Créer un guide d'utilisation pour les utilisateurs finaux
+    3. Documenter l'architecture globale et les choix techniques
+    4. Préparer des exemples d'utilisation et des tutoriels
+    
+    Livrables:
+    - Documentation technique complète
+    - Guide utilisateur
+    - Exemples et tutoriels
+    - Recommandations pour les développements futurs
+    
+    Contraintes:
+    - La documentation doit être claire et accessible
+    - Inclure des diagrammes et illustrations pour clarifier les concepts
+    - Couvrir à la fois les aspects techniques et l'utilisation pratique
+    - Proposer des pistes d'amélioration et d'extension
+  expected_output: "Documentation complète du projet avec guides et exemples"
+  output_file: "output/documentation.md"
+
+  # Tâches pour l'agent Secrétaire Technique à ajouter dans tasks.yaml
+collect_code_task:
+  name: "collect_code_task"
+  agent: "secretary"
+  description: >
+    Collecter et organiser tout le code source produit par l'équipe de développement.
+    
+    Vos objectifs:
+    1. Extraire le code source Solidity produit par les experts (ERC20Token, TokenFactory, AccessControl, etc.)
+    2. Créer une arborescence de fichiers appropriée pour organiser le code source
+    3. Vérifier la présence des éléments requis dans chaque contrat
+    4. Structurer le code de manière cohérente et conforme aux standards
+    5. Ajouter des commentaires de section pour améliorer la lisibilité si nécessaire
+    
+    Livrables:
+    - Fichiers de code source Solidity structurés et organisés
+    - Fichiers de code TypeScript pour les tests et le frontend
+    - Structure de répertoires complète du projet
+    - Liste des fichiers produits avec leur description
+    
+    Contraintes:
+    - Les fichiers doivent suivre les conventions de nommage standard
+    - Le code doit inclure tous les éléments mentionnés dans les discussions
+    - L'organisation doit refléter les meilleures pratiques pour un projet Hardhat
+  expected_output: "Code source organisé dans une structure de répertoires claire avec liste des fichiers"
+  output_file: "output/code_collection.md"
+
+create_documentation_task:
+  name: "create_documentation_task"
+  agent: "secretary"
+  description: >
+    Créer une documentation complète du projet à partir des contributions de tous les experts.
+    
+    Vos objectifs:
+    1. Compiler les informations fournies par tous les membres de l'équipe
+    2. Créer une documentation technique pour les développeurs
+    3. Créer un guide utilisateur pour les utilisateurs finaux
+    4. Documenter l'architecture globale et les décisions de conception
+    5. Préparer des exemples d'utilisation et des tutoriels
+    
+    Livrables:
+    - Documentation technique complète au format Markdown
+    - Guide utilisateur avec captures d'écran conceptuelles
+    - Diagrammes d'architecture (en texte ou ASCII art)
+    - Exemples d'utilisation annotés
+    
+    Contraintes:
+    - La documentation doit être claire et accessible
+    - Elle doit couvrir tous les aspects du projet
+    - Elle doit inclure des exemples concrets
+    - Elle doit être structurée de manière logique
+  expected_output: "Documentation complète du projet avec guides techniques et utilisateurs"
+  output_file: "output/full_documentation.md"
+
+track_progress_task:
+  name: "track_progress_task"
+  agent: "secretary"
+  description: >
+    Documenter le processus de développement et créer un rapport de progression.
+    
+    Vos objectifs:
+    1. Suivre les discussions et décisions de l'équipe
+    2. Documenter les défis rencontrés et les solutions adoptées
+    3. Créer un journal de développement chronologique
+    4. Identifier les contributions clés de chaque membre de l'équipe
+    5. Préparer un rapport de progression détaillé
+    
+    Livrables:
+    - Journal chronologique du développement
+    - Rapport des décisions clés et leur justification
+    - Registre des problèmes rencontrés et solutions
+    - Synthèse des contributions de chaque expert
+    
+    Contraintes:
+    - Le rapport doit être factuel et objectif
+    - Il doit mettre en évidence les points importants
+    - Il doit être structuré par phases de développement
+    - Il doit pouvoir servir de référence pour les futurs développements
+  expected_output: "Rapport de progression détaillé avec journal de développement et décisions clés"
+  output_file: "output/progress_report.md"
+
+communicate_standards_task:
+  name: "communicate_standards_task"
+  agent: "secretary"
+  description: >
+    Communiquer les standards de documentation et de format de code à tous les membres de l'équipe.
+    
+    Vos objectifs:
+    1. Présenter les conventions de formatage du code et de la documentation à tous les agents
+    2. Expliquer l'importance de ces conventions pour l'intégration et l'extraction des fichiers
+    3. S'assurer que tous les agents comprennent et acceptent de suivre ces conventions
+    4. Répondre aux questions éventuelles concernant ces standards
+    
+    CONVENTIONS À COMMUNIQUER:
+    
+    Pour les contrats Solidity:
+    ```
+    // NomDuFichier.sol
+    ```solidity
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.28;
+    
+    contract NomDuContrat {
+        // Contenu du contrat
+    }
+    ```
+    
+    Pour les tests et scripts TypeScript/JavaScript:
+    ```
+    // nomDuFichier.ts
+    ```typescript
+    import { expect } from "chai";
+    
+    describe("Test", function() {
+        // Contenu du test
+    });
+    ```
+    
+    Pour le code frontend:
+    ```
+    // ComposantUI.tsx
+    ```typescript
+    import React from 'react';
+    
+    const ComposantUI = () => {
+        // Contenu du composant
+    };
+    
+    export default ComposantUI;
+    ```
+    
+    Pour la documentation:
+    ```
+    # Documentation: NomDuFichier.md
+    
+    ## Titre principal
+    
+    Contenu de la documentation...
+    ```
+    
+    Pour l'arborescence de fichiers:
+    ```
+    project/
+    ├── contracts/
+    │   ├── ERC20Token.sol
+    │   └── TokenFactory.sol
+    ├── test/
+    │   └── token.test.ts
+    └── docs/
+        └── Architecture.md
+    ```
+    
+    Livrables:
+    - Message de communication des standards à tous les agents
+    - Confirmation de la compréhension par tous les agents
+    - Documentation de référence des conventions
+    
+    Contraintes:
+    - La communication doit être claire et concise
+    - Les exemples doivent illustrer clairement les conventions
+    - Tous les types de fichiers pertinents doivent être couverts
+  expected_output: "Confirmation que tous les agents comprennent et acceptent de suivre les conventions de documentation"
+  output_file: "output/standards_communication.md"
+
+ongoing_collection_task:
+  name: "ongoing_collection_task"
+  agent: "secretary"
+  description: >
+    Collecter, organiser et confirmer la réception des fichiers produits CONTINUELLEMENT tout au long du projet.
+    
+    Vos objectifs:
+    1. Surveiller constamment la production de code et de documentation par les autres agents
+    2. Identifier immédiatement chaque nouveau fichier ou mise à jour présenté
+    3. Confirmer explicitement la réception de chaque fichier aux agents concernés
+    4. Organiser les fichiers dans la structure appropriée en temps réel
+    5. Maintenir un index à jour de tous les fichiers produits
+    6. Signaler aux agents toute non-conformité avec les conventions établies
+    
+    Votre rôle est crucial:
+    - Vous êtes responsable de SUIVRE ET CONFIRMER LA RÉCEPTION de chaque livrable
+    - Vous devez intervenir IMMÉDIATEMENT lorsqu'un agent produit un fichier
+    - Vous devez maintenir une liste complète des fichiers et leur statut (brouillon, final)
+    - Vous êtes la mémoire du projet et devez vous assurer qu'aucun fichier n'est perdu
+    
+    Processus à suivre:
+    1. Dès qu'un agent présente un fichier, confirmez sa réception avec: "✅ Fichier [nom] reçu et enregistré"
+    2. Si le fichier ne respecte pas les conventions, demandez immédiatement des corrections
+    3. Informez régulièrement l'équipe de l'état d'avancement de la collection documentaire
+    4. À la fin de chaque phase, présentez un inventaire des fichiers collectés
+    
+    Livrables:
+    - Confirmations de réception pour chaque fichier
+    - Inventaires réguliers des fichiers collectés
+    - Notifications de non-conformité le cas échéant
+    - Index complet et structuré des livrables du projet
+    
+    Contraintes:
+    - Vous devez être proactif et ne pas attendre la fin du projet
+    - Vous devez intervenir après chaque présentation de fichier
+    - Vous devez vous assurer que tous les fichiers sont complets et utilisables
+  expected_output: "Confirmations de réception continues des fichiers et index structuré des livrables du projet"
+  output_file: "output/ongoing_collection.md"
+
+create_physical_files_task:
+  name: "create_physical_files_task"
+  agent: "secretary"
+  description: >
+    Créer physiquement tous les fichiers produits par l'équipe dans le système de fichiers du projet.
+    
+    Vos objectifs:
+    1. Extraire le contenu de chaque fichier de code et de documentation produit par les agents
+    2. Créer PHYSIQUEMENT ces fichiers dans l'arborescence du projet avec le contenu exact fourni
+    3. Organiser les fichiers selon une structure standard de projet Ethereum/Hardhat
+    4. Maintenir un registre de tous les fichiers créés avec leur emplacement
+    5. Vérifier que chaque fichier est complet et syntaxiquement correct
+    
+    Votre rôle est crucial:
+    - Vous êtes responsable de CRÉER LES FICHIERS RÉELS dans le système de fichiers
+    - Vous devez respecter une structure de répertoires cohérente et standard
+    - Vous devez vous assurer que le contenu est correctement formaté et complet
+    
+    Structure de répertoires à créer et maintenir:
+    ```
+    token-forge/
+    ├── contracts/
+    │   ├── ERC20Token.sol
+    │   ├── TokenFactory.sol
+    │   ├── AccessControl.sol
+    │   └── ...
+    ├── test/
+    │   ├── Token.test.ts
+    │   ├── Factory.test.ts
+    │   └── ...
+    ├── scripts/
+    │   ├── deploy.ts
+    │   └── ...
+    ├── frontend/
+    │   ├── components/
+    │   │   ├── TokenForm.tsx
+    │   │   └── ...
+    │   ├── pages/
+    │   │   └── ...
+    │   └── ...
+    ├── docs/
+    │   ├── Architecture.md
+    │   ├── UserGuide.md
+    │   └── ...
+    ├── hardhat.config.ts
+    ├── package.json
+    └── README.md
+    ```
+    
+    Processus à suivre:
+    1. Dès qu'un agent présente un fichier complet conforme aux conventions
+    2. Créez physiquement ce fichier dans le répertoire approprié
+    3. Confirmez la création avec: "🔧 Fichier [nom] créé dans [chemin]"
+    4. Mettez à jour l'index des fichiers du projet
+    5. Si des fichiers de configuration standard (hardhat.config.ts, package.json) manquent, créez-les également
+    
+    Livrables:
+    - Structure complète de répertoires du projet
+    - Tous les fichiers de code et de documentation créés physiquement
+    - Index des fichiers avec leur emplacement
+    - Fichiers de configuration standard nécessaires
+    
+    Contraintes:
+    - Vous devez créer les fichiers au fur et à mesure qu'ils sont produits
+    - Vous devez respecter exactement le contenu fourni par les agents
+    - Vous devez organiser les fichiers selon les conventions du secteur
+    - Vous devez vous assurer que tous les fichiers essentiels sont créés
+  expected_output: "Structure complète de répertoires et fichiers physiques du projet Token Forge"
+  output_file: "output/physical_files.md"

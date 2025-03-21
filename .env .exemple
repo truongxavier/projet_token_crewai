@@ -1,0 +1,18 @@
+# Token Forge CrewAI - Variables d'environnement
+# Renommez ce fichier en .env et remplissez vos clés API
+
+# OpenAI API - Pour les agents nécessitant des capacités de raisonnement technique
+OPENAI_API_KEY=votre-clé-api-openai
+
+# Anthropic API - Pour les agents nécessitant des explications détaillées et de la créativité
+ANTHROPIC_API_KEY=votre-clé-api-anthropic
+
+# Google Generative AI - Pour les agents nécessitant une compréhension précise des patterns
+GOOGLE_API_KEY=votre-clé-api-google
+
+# Groq API - Pour des inférences rapides
+GROQ_API_KEY=votre-clé-api-groq
+
+# Chemin pour les sorties (optionnel)
+OUTPUT_DIR=output
+

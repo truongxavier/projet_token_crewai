@@ -1,0 +1,8 @@
+# Configuration de l'équipe CrewAI pour Token Forge
+
+name: "Token Forge Development Crew"
+description: "Équipe d'agents IA spécialisés dans le développement d'une plateforme de création de tokens ERC-20"
+verbose: true  
+process: "hierarchical"  # Options: sequential, hierarchical
+output_log_file: "output/execution.json"
+# Utilisation du mode hiérarchique car nous avons maintenant un chef de projet
